@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #4b1628,
+        #7a3047,
+        #a65f70
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 950px;
+
+    background: linear-gradient(
+        135deg,
+        #f6e8e5,
+        #f2d9d7
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 28px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 25px 60px rgba(55, 10, 25, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+
+.wine-icon {
+    font-size: 60px;
+
+    margin-bottom: 10px;
+
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.15));
+
+    animation: float 3s ease-in-out infinite;
+}
+
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+
+    color: #5b1026;
+
+    font-size: 40px;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 8px;
+}
+
+
+.header p {
+    color: #806d72;
+
+    font-size: 15px;
+}
+
+
+/* Form */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+
+}
+
+
+/* Input */
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.input-group label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #542334;
+
+    margin-bottom: 8px;
+
+    letter-spacing: 0.3px;
+}
+
+
+.input-group input {
+
+    padding: 14px 16px;
+
+    border: 1px solid #dfcfd2;
+
+    border-radius: 12px;
+
+    background: #fffdfb;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    color: #44202c;
+
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+
+.input-group input:hover {
+
+    border-color: #b98291;
+}
+
+
+.input-group input:focus {
+
+    border-color: #8e304b;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(142, 48, 75, 0.10);
+
+    transform: translateY(-1px);
+}
+
+
+.input-group input::placeholder {
+
+    color: #b6a8ab;
+}
+
+
+/* Button */
+
+button {
+
+    width: 100%;
+
+    margin-top: 32px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b1026,
+            #8e304b,
+            #a84964
+        );
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(91, 16, 38, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+
+button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(91, 16, 38, 0.35);
+}
+
+
+button:active {
+
+    transform: translateY(0);
+}
+
+
+/* Result */
+
+.result-card {
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8f3,
+            #f7e7e5
+        );
+
+    border: 1px solid #e4c9ce;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 25px rgba(91, 16, 38, 0.08);
+
+    animation: resultAppear 0.5s ease;
+}
+
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.result-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 8px;
+}
+
+
+.result-card h2 {
+
+    font-family: 'Playfair Display', serif;
+
+    color: #5b1026;
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+
+.prediction {
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 52px;
+
+    font-weight: 700;
+
+    color: #8e304b;
+
+    margin: 8px 0;
+}
+
+
+.result-card p {
+
+    color: #806d72;
+
+    font-size: 13px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .container {
+        padding: 28px 20px;
+        border-radius: 22px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .wine-icon {
+        font-size: 50px;
+    }
+
+    .prediction {
+        font-size: 44px;
+    }
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Red Wine Quality Predictor</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <div class="wine-icon">🍷</div>
+
+            <h1>Red Wine Quality</h1>
+
+            <p>
+                Enter the wine characteristics to predict its quality.
+            </p>
+
+        </div>
+
+
+        <form action="/predict" method="get">
+
+            <div class="form-grid">
+
+
+                <div class="input-group">
+
+                    <label>Fixed Acidity</label>
+
+                    <input type="number"
+                           step="any"
+                           name="fixed_acidity"
+                           placeholder="e.g. 7.4"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Volatile Acidity</label>
+
+                    <input type="number"
+                           step="any"
+                           name="volatile_acidity"
+                           placeholder="e.g. 0.70"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Citric Acid</label>
+
+                    <input type="number"
+                           step="any"
+                           name="citric_acid"
+                           placeholder="e.g. 0.00"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Residual Sugar</label>
+
+                    <input type="number"
+                           step="any"
+                           name="residual_sugar"
+                           placeholder="e.g. 1.9"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Chlorides</label>
+
+                    <input type="number"
+                           step="any"
+                           name="chlorides"
+                           placeholder="e.g. 0.076"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Free Sulfur Dioxide</label>
+
+                    <input type="number"
+                           step="any"
+                           name="free_sulfur_dioxide"
+                           placeholder="e.g. 11"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Total Sulfur Dioxide</label>
+
+                    <input type="number"
+                           step="any"
+                           name="total_sulfur_dioxide"
+                           placeholder="e.g. 34"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Density</label>
+
+                    <input type="number"
+                           step="any"
+                           name="density"
+                           placeholder="e.g. 0.9978"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>pH</label>
+
+                    <input type="number"
+                           step="any"
+                           name="pH"
+                           placeholder="e.g. 3.51"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Sulphates</label>
+
+                    <input type="number"
+                           step="any"
+                           name="sulphates"
+                           placeholder="e.g. 0.56"
+                           required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Alcohol</label>
+
+                    <input type="number"
+                           step="any"
+                           name="alcohol"
+                           placeholder="e.g. 9.4"
+                           required>
+
+                </div>
+
+
+            </div>
+
+
+            <button type="submit">
+                Predict Wine Quality
+            </button>
+
+        </form>
+
+
+        {% if prediction is defined %}
+
+        <div class="result-card">
+
+            <div class="result-icon">🍷</div>
+
+            <h2>Predicted Wine Quality</h2>
+
+            <div class="prediction">
+                {{ prediction }}
+            </div>
+
+            <p>Quality Score</p>
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</body>
+
+</html>
